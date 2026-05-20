@@ -1,6 +1,6 @@
-# TaskRaid
+# Flow
 
-TaskRaid is a gamified task management desktop application built using JavaFX.
+Flow is a gamified task management desktop application built using JavaFX.
 
 This application helps users manage project tasks using a simple Kanban workflow:
 
@@ -9,8 +9,6 @@ This application helps users manage project tasks using a simple Kanban workflow
 * Done
 
 Users gain XP by completing tasks, level up through milestone progression, and unlock achievements based on their productivity.
-
-TaskRaid was created as a Final Project for the Object Oriented Programming course.
 
 ---
 
