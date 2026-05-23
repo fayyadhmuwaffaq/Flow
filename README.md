@@ -2,71 +2,176 @@
 
 Flow is a gamified task management desktop application built using JavaFX.
 
-This application helps users manage project tasks using a simple Kanban workflow:
+This application helps teams manage project tasks using a Kanban workflow:
 
 * To-Do
 * On Progress
 * Done
 
-Users gain XP by completing tasks, level up through milestone progression, and unlock achievements based on their productivity.
+Users can gain XP, level up, unlock achievements, and compete through leaderboard rankings.
+
+Flow was created as a Final Project for the Object Oriented Programming course.
 
 ---
 
-## Features
+# Features
 
-### Authentication
+## Authentication
 
 * Login
 * Register
-* User validation
+* Role selection:
 
-### Dashboard
+  * Manager
+  * Member
+
+---
+
+# Role System
+
+## Manager
+
+Manager can:
+
+* Create task
+* Edit task
+* Delete task
+* Assign task to member
+* Set task deadline
+* Move task between statuses
+* View leaderboard
+
+## Member
+
+Member can:
+
+* Edit assigned task
+* Delete task
+* Move task between statuses
+* View leaderboard
+
+Member cannot:
+
+* Create task
+* Assign task
+* Set deadline
+
+---
+
+# Dashboard
+
+Dashboard includes:
 
 * Total tasks
 * Completed tasks
 * Current level
+* Total XP
 * XP milestone progress
+* Achievement preview
+* Leaderboard
 
-### Task Board
+---
+
+# Task Board
+
+Kanban Board system:
+
+* To-Do
+* On Progress
+* Done
+
+Task features:
 
 * Add task
 * Edit task
 * Delete task
+* Assign member
+* Set deadline
 * Move task between statuses
 
-### Gamification System
-
-* +20 XP for completed tasks
-* Dynamic level progression
-* XP reduction when tasks move out of DONE
-* Achievement unlocking system
-
-### Achievement Hall
-
-Unlock achievements based on user level:
-
-* Pemalas
-* Rajin
-* Deadline Hunter
-* Master
-* Productivity King
+Tasks can move backward or forward to prevent accidental status changes.
 
 ---
 
-## Technologies
+# XP System
+
+XP is calculated based on the current task status.
+
+Rules:
+
+* Task moved to DONE → +20 XP
+* Task moved out of DONE → -20 XP
+
+This system prevents XP exploit and keeps progression balanced.
+
+---
+
+# Level System
+
+Formula:
+
+```bash
+requiredXP = level * 100
+```
+
+Example:
+
+* Level 1 → 100 XP
+* Level 2 → 200 XP
+* Level 3 → 300 XP
+
+Levels are dynamic and can decrease if XP is reduced.
+
+---
+
+# Achievement System
+
+Achievements are unlocked based on user level.
+
+Achievements:
+
+* Level 1 → Pemalas
+* Level 2 → Rajin
+* Level 3 → Deadline Hunter
+* Level 4 → Master
+* Level 5+ → Productivity King
+
+---
+
+# UI Layout
+
+The application uses:
+
+* Left Sidebar Navigation
+* Modern Dark Mode
+* Card-based Layout
+* Progress Bar UI
+
+Sidebar menu:
+
+* Dashboard
+* Task Board
+* Profile
+* Achievement Hall
+* Logout
+
+---
+
+# Technologies
 
 * Java 17+
 * JavaFX
 * SQLite
 * JDBC SQLite Driver
+* Gradle
 
 ---
 
-## Requirements
+# Requirements
 
 Before running this project, make sure you have installed:
 
-### 1. Java JDK 17 or higher
+## 1. Java JDK 17 or Higher
 
 Download:
 https://www.oracle.com/java/technologies/downloads/
@@ -79,16 +184,16 @@ java --version
 
 ---
 
-### 3. IDE
+## 2. IDE
 
-Recommended:
+Recommended IDE:
 
-* IntelliJ IDEA
+* Antigravity IDE
 * VS Code
 
 ---
 
-## Clone Repository
+# Clone Repository
 
 ```bash
 git clone https://github.com/fayyadhmuwaffaq/Flow.git
@@ -102,17 +207,23 @@ cd Flow
 
 ---
 
-## Running the Application
+# Running the Application
 
-Run:
+Run the project using Gradle:
 
 ```bash
 ./gradlew run
 ```
 
+For Windows:
+
+```bash
+gradlew.bat run
+```
+
 ---
 
-## Project Structure
+# Project Structure
 
 ```bash
 src/
@@ -129,50 +240,44 @@ src/
 
 ---
 
-## XP System
+# Database
 
-XP is calculated based on the current task status.
+The application uses SQLite local database.
 
-Rules:
+Database stores:
 
-* Task moved to DONE → +20 XP
-* Task moved out of DONE → -20 XP
-
-This prevents XP exploit and keeps progression balanced.
-
----
-
-## Level Progression
-
-Level requirements use the formula:
-
-```bash
-requiredXP = level * 100
-```
-
-Example:
-
-* Level 1 → 100 XP
-* Level 2 → 200 XP
-* Level 3 → 300 XP
-
-Levels are dynamic and can decrease if XP is reduced.
+* users
+* tasks
+* roles
+* xp
+* achievements
 
 ---
 
-## Future Improvements
+# Screens
+
+* Login
+* Register
+* Dashboard
+* Task Board
+* Profile
+* Achievement Hall
+
+---
+
+# Future Improvements
 
 Planned features:
 
 * Move Task
 * Better Animation
 * Statistics Dashboard
-* Team Collaboration
 * Responsive Layout
+* Team Collaboration Expansion
 
 ---
 
-## Team
+# Team
 
 * UI & JavaFX
 * Logic & Gamification
@@ -180,6 +285,6 @@ Planned features:
 
 ---
 
-## License
+# License
 
 This project is created for educational purposes.
