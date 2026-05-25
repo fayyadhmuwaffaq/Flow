@@ -27,6 +27,7 @@ dependencies {
 
     // This dependency is used by the application.
     implementation libs.guava
+    implementation libs.sqlite
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
@@ -38,5 +39,5 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = 'flow.App'
+    mainClass = 'flow.app.MainApp'
 }
